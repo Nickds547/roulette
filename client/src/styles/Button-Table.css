@@ -1,0 +1,32 @@
+
+.span-break{
+    display: block;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin: 10px;
+}
+.roulette-button{
+    width: 50px;
+    text-align: center;
+    margin: 10px;
+}
+
+.white-button{
+    background-color:white;
+    border: black;
+    border-width: thin;
+    border-style: solid;
+}
+.black-button{
+    background-color: black;
+    color: white;
+}
+
+.container-wrapper{
+    display: flex;
+    max-height: 200px;
+}
