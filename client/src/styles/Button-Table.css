@@ -16,14 +16,14 @@
 }
 
 .white-button{
-    background-color:white;
-    border: black;
+    background-color:white !important;
+    border: black !important;
     border-width: thin;
     border-style: solid;
 }
 .black-button{
-    background-color: black;
-    color: white;
+    background-color: black !important;
+    color: white !important;
 }
 
 .container-wrapper{
