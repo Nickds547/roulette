@@ -4,6 +4,7 @@ import * as bodyparser from 'body-parser';
 import * as dotenv from 'dotenv'
 import * as mongoose from 'mongoose';
 import routes from './routes'
+import { ConnectOptions } from 'mongoose';
 
 dotenv.config();
 
@@ -14,13 +15,12 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(routes);
 
 const PORT = process.env.PORT;
-const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@roulette.guvch.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
-const options = { useNewUrlParser: true, useUnifiedTopology: true }
+const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_INSTANCE}/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 
 app.get('/', (req, res) => res.send('Express + TypeScript Server'));
 
 mongoose
-  .connect(uri, options)
+  .connect(uri)
   .then(() =>
     app.listen(PORT, () =>
       console.log(`Server running on http://localhost:${PORT}`)
