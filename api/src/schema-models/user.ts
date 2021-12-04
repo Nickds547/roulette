@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { Collection, model, Schema } from "mongoose";
 import { IUser } from "../types/user";
 
 const userSchema: Schema = new Schema(
@@ -15,7 +15,8 @@ const userSchema: Schema = new Schema(
             type: String,
             required: true
         }
-    }
+    },
+    {collection: 'Users'}
 )
 
 export default model<IUser>("User", userSchema)
