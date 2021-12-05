@@ -15,6 +15,7 @@ const login = async (req: Request, res: Response): Promise<void> =>{
     
 
     } catch(error){
+        res.send(500).send(err)
         throw error;
     }
 }

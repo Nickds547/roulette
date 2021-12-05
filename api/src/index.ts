@@ -17,7 +17,7 @@ app.use(routes);
 const PORT = process.env.PORT;
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_INSTANCE}/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 
-app.get('/', (req, res) => res.send('Express + TypeScript Server'));
+app.get('/', (req, res) => res.send('All good!'));
 
 mongoose
   .connect(uri)
