@@ -5,7 +5,7 @@ import * as jwtService from './jwt.service';
 import { InvalidCredintials, NotFoundError } from "../errors";
 
 export const login = async (username, password: string): Promise<IVerifiedUser> =>{
-    const user = await userDB.getUser(username);
+    const user = await userDB.getUserByUserNameAsync(username);
     if(user === null) throw new NotFoundError('User Not Found');
     
     var validLogin = await authService.comparePasswords(password, user.password)
@@ -18,4 +18,9 @@ export const login = async (username, password: string): Promise<IVerifiedUser> 
     else{
         throw new InvalidCredintials("Username and password do not match");
     }
+}
+
+export const getUserById = async (id: string): Promise<IUser> =>{
+    var user = userDB.getUserByIdAsync(id);
+    return user;
 }

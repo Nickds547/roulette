@@ -12,3 +12,14 @@ export const createToken =  (id: string): IJwtToken =>{
         token: jwt.sign(dataStoredInToken, secret, { expiresIn }),
     };
 }
+
+export  const decryptToken = (token: string): DataStoredInToken => {
+    try{
+        const secret = process.env.JWT_SECRET;
+        const verificationResponse = jwt.verify(token, secret) as DataStoredInToken
+        return verificationResponse;
+    }
+    catch(error){
+        throw error;
+    }
+}

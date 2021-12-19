@@ -19,10 +19,12 @@ const login = async (req: Request, res: Response): Promise<void> =>{
     catch(error){
 
         if(error instanceof CustomError){
-            res.sendStatus(error.getErrorStatus()).send(error);
+            res.statusCode = error.getErrorStatus()
+            res.send(error);
         }
         else{
-            res.send(500).send(error)
+            res.statusCode = 500;
+            res.send(error)
         }
         throw error;
     }

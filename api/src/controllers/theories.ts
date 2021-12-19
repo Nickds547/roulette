@@ -12,3 +12,18 @@ export const getTheories =  async (req: Request, res: Response): Promise<void> =
         throw error;
     }
 }
+
+export const createTheory = async (req: Request, res: Response): Promise<void> => {
+    try {
+        console.log("In Create Theory")
+
+        res.statusCode = 200;
+        res.send("Theory Created")
+        return
+    }
+    catch(error){
+        res.statusCode = 500;
+        res.send(error);
+        throw error;
+    }
+}
