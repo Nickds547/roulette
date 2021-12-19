@@ -6,7 +6,8 @@ const theorySchema: Schema = new Schema(
     {
         sortOrder: {
             type: Number,
-            required: true
+            required: true,
+            unique: true
         },
         theory: {
             type: String,

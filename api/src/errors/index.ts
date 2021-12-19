@@ -27,3 +27,13 @@ export class InvalidCredintials extends CustomError {
         return 401;
     }
 }
+
+export class InvalidBodyData extends CustomError {
+    public constructor(){
+        super("Incorrect Data Format")
+    }
+
+    public getErrorStatus(): number {
+        return 400;
+    }
+}

@@ -1,5 +1,7 @@
 import {Response, Request} from 'express';
+import { InvalidBodyData } from '../errors';
 import * as theoryService from '../services/theory.service';
+import { ITheory } from '../types/theory';
 
 export const getTheories =  async (req: Request, res: Response): Promise<void> =>{
     try{
@@ -15,10 +17,17 @@ export const getTheories =  async (req: Request, res: Response): Promise<void> =
 
 export const createTheory = async (req: Request, res: Response): Promise<void> => {
     try {
-        console.log("In Create Theory")
+       
+        const {theories} = req.body;
+        
+        if(!(theories instanceof Array))
+            throw new InvalidBodyData();
+
+        var arrayTheories = theories as Array<ITheory>
+        var updatedTheories = await theoryService.createOrUpdateTheories(arrayTheories);
 
         res.statusCode = 200;
-        res.send("Theory Created")
+        res.send(updatedTheories)
         return
     }
     catch(error){
