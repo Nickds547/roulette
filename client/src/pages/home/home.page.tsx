@@ -7,8 +7,10 @@ const HomePage = () =>{
     return (
         <>
         <div className="hompage-container">
-            <components.RouletteWheel/>
-            <components.ButtonTable/>
+            <div className="roulette-table">
+                <components.RouletteWheel/>
+                <components.ButtonTable/>
+            </div>
         </div>
         </>
     )

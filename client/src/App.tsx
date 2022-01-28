@@ -1,19 +1,19 @@
-import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Routes from './Routes';
 import './App.css';
 
 import { NavbarComponent } from './components';
+import MainRouter from './router/app.routes';
 
 function App() {
   return (
-   
-    <div className="page-container">
+    <>
       <NavbarComponent/>
-      <Router>
-        <Routes />
-      </Router>
-    </div>
+      <div className="page-container">
+        <Router>
+          <MainRouter />
+        </Router>
+      </div>
+    </>
   );
 }
 

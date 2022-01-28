@@ -1,14 +1,15 @@
 
-import * as pages from './pages';
+import * as pages from '../pages';
 import {Route, Switch} from 'react-router-dom'
 
-const Routes = () => (
+const MainRouter = () => (
     <Switch>
         <Route exact path="/" component={pages.HomePage}/>
         <Route exact path="/voting" component={pages.VotingPage}/>
-
+        <Route exact path="/admin" component={pages.AdminPage}/>
         <Route component={pages.HomePage}/>
+
     </Switch>
 );
 
-export default Routes;
+export default MainRouter;
