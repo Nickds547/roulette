@@ -1,5 +1,5 @@
 
-import * as pages from './Pages/pages';
+import * as pages from './pages';
 import {Route, Switch} from 'react-router-dom'
 
 const Routes = () => (
