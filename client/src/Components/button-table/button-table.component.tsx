@@ -21,17 +21,23 @@ const ButtonTable = () =>{
                         <>
                         { <div className="button-wrapper">
                             <button 
-                                className={`btn roulette-button ${firsButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${firsButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {firsButton}
                             </button>
                             <button 
-                                className={`btn roulette-button ${secondButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${secondButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {secondButton}
                             </button>
                             <button 
-                                className={`btn roulette-button ${thirdButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${thirdButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {thirdButton}
                             </button>
