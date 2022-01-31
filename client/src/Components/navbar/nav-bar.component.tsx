@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { IUser } from "../../redux/user-account/user-account.model";
 
 interface INavBarProps{
@@ -14,8 +15,8 @@ export const NavbarComponent = (props: INavBarProps) =>{
         <Navbar bg="dark" variant="dark">
             <Container>
                 <Nav className="me-auto" defaultActiveKey="/">
-                <Nav.Link>Home</Nav.Link>
-                {props.userAccount.role ==='admin' && <Nav.Link href="/admin">Admin</Nav.Link>}
+                <Nav.Link as={Link} to="">Home</Nav.Link>
+                {props.userAccount.role ==='admin' && <Nav.Link as={Link} to="/admin">Admin</Nav.Link>}
                 </Nav>
             </Container>
         </Navbar>

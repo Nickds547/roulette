@@ -7,7 +7,6 @@ const MainRouter = () => (
         <Route exact path="/" component={pages.HomePage}/>
         <Route exact path="/admin" component={pages.AdminPage}/>
         <Route component={pages.HomePage}/>
-
     </Switch>
 );
 

@@ -10,12 +10,12 @@ function App() {
 
   return (
     <>
+    <Router>
       <NavbarComponent userAccount={userAccount}/>
       <div className="page-container">
-        <Router>
           <MainRouter />
-        </Router>
       </div>
+    </Router>
     </>
   );
 }

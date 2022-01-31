@@ -11,22 +11,10 @@ interface loginProps {
 const LoginComponent = (props: loginProps) => {
 
     const [formValue, setFormValue] = useState({username: "", password: ""});
-    const [invalidForm, setInvalid] = useState({username: true, password: true});
     const [showFormValidation, setShowFormValidation] = useState(false);
 
     const updateUsername = (event: React.ChangeEvent<HTMLInputElement>) =>{
         event.preventDefault();
-
-        if(formValue.username.length < 5)
-            setInvalid({
-                ...invalidForm,
-                username: true
-            })
-        else
-            setInvalid({
-                ...invalidForm,
-                username: false
-            })
         setFormValue({
             ...formValue,
             username: event.target?.value || ""
@@ -35,17 +23,6 @@ const LoginComponent = (props: loginProps) => {
 
     const updatePassword = (event: React.ChangeEvent<HTMLInputElement>) =>{
         event.preventDefault();
-        if(formValue.password.length < 5)
-            setInvalid({
-                ...invalidForm,
-                password: true
-            })
-        else
-            setInvalid({
-                ...invalidForm,
-                password: false
-            })
-
         setFormValue({
             ...formValue,
             password: event.target?.value || ""
@@ -54,7 +31,7 @@ const LoginComponent = (props: loginProps) => {
 
     const submitForm = () =>{
         setShowFormValidation(true);
-        if(!invalidForm.username && !invalidForm.password){
+        if(formValue.username.length >= 5 && formValue.password.length >= 5){
             props.loginSubmitted(formValue);
         }
     }
