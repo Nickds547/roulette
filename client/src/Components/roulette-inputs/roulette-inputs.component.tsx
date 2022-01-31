@@ -9,13 +9,16 @@ interface rouletteInputProps{
     theory: string,
 }
 
-const rouletteInput = (props: rouletteInputProps) =>(
-    <div className="theory-container">
-            <Form.Label className="number-label">Number</Form.Label>
+const RoulettInput = (props: rouletteInputProps) =>{
+
+    const [getTheory, setThoery] = useState({sortOrder: props.index, theory: props.theory})
+    return (
+        <div className="theory-container">
             <Form.Control 
                 className="sortorder-input"
                 type="number" 
                 value={props.index || ''} 
+                placeholder="#"
             />
             <Form.Control 
                 as="textarea" 
@@ -23,8 +26,9 @@ const rouletteInput = (props: rouletteInputProps) =>(
                 value={props.theory}    
                 className="theory-input"
             />
-    </div>
-);
+        </div>
+    )
+}
 
 
 interface IRouletteInputsProps{
@@ -38,14 +42,16 @@ const RouletteInputsComponent = (props: IRouletteInputsProps) =>{
     const [newTheories, setTheoriesArray] = useState(initialState);
 
     function addTheory(): void{
-       setTheoriesArray(newTheories.concat(rouletteInput({index: null, theory: ""})))
+       setTheoriesArray(newTheories.concat(RoulettInput({index: null, theory: ""})))
     }
 
     return (
         <>
-            {props.theories.map((theory) =>{
+            {props.theories.map((theory, index) =>{
                 return(
-                    rouletteInput({index: theory.sortOrder, theory: theory.theory})
+                    <div key={index}>
+                       { RoulettInput({index: theory.sortOrder, theory: theory.theory})}
+                    </div>
                 )
             })}
 
