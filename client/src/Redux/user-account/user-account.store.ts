@@ -19,7 +19,6 @@ export const userAccount = createSlice({
   reducers: {
     login: (state, action: PayloadAction<ILogin>) => {
       //TODO: add api
-      console.log('logging in store: ', action)
       var newUser: IUser = {
         role:  'admin',
         token: 'valid',

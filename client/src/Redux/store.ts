@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import theoriesReducer   from "./thoeries/theories.store";
 import userAccountReducer  from './user-account/user-account.store'
 
 const store = configureStore({
   reducer: {
-    userAccountReducer
+    userAccountReducer,
+    theoriesReducer
   },
 })
 
