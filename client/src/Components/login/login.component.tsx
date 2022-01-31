@@ -41,10 +41,10 @@ const LoginComponent = (props: loginProps) => {
             <div className="login-container">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>User name</Form.Label>
+                        <Form.Label>Username*</Form.Label>
                         <Form.Control 
                             type="text" 
-                            placeholder="Enter email" 
+                            placeholder="Enter username" 
                             value={formValue.username}
                             onChange={updateUsername}    
                         />
@@ -56,7 +56,7 @@ const LoginComponent = (props: loginProps) => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>Password*</Form.Label>
                         <Form.Control 
                             type="password" 
                             placeholder="Password" 

@@ -1,23 +1,25 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IUser } from "../../redux/user-account/user-account.model";
 
 interface INavBarProps{
-    userAccount: IUser
+    userAccount: IUser,
 }
 
 
 export const NavbarComponent = (props: INavBarProps) =>{
-
-    console.log(props.userAccount)
+    const location = useLocation().pathname || '';
 
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Nav className="me-auto" defaultActiveKey="/">
-                <Nav.Link as={Link} to="">Home</Nav.Link>
-                {props.userAccount.role ==='admin' && <Nav.Link as={Link} to="/admin">Admin</Nav.Link>}
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="me-auto">
+                <Nav.Link active={location === '/'} as={Link} to="">Home</Nav.Link>
+                {props.userAccount.role ==='admin' && <Nav.Link active={location === '/admin'} as={Link} to="/admin">Admin</Nav.Link>}
                 </Nav>
+            </Navbar.Collapse>
             </Container>
         </Navbar>
     )
