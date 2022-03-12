@@ -1,0 +1,20 @@
+.theory-container{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+
+.sortorder-input{
+    width: 50px !important;
+    display: initial !important;
+    margin-right: 20px;
+}
+
+.number-label{
+    margin-right: 20px;
+}
+
+.theory-input{
+    display: initial !important;
+    width: 50% !important;
+}

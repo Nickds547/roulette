@@ -1,5 +1,4 @@
-import React from "react";
-import '../styles/Button-Table.css';
+import './button-table.component.css';
 
 const ButtonTable = () =>{
 
@@ -12,7 +11,7 @@ const ButtonTable = () =>{
    
     return (
         <>
-        <div className="container-wrapper">
+        <div className="button-container">
             {buttons.map((value, index) =>{
                 var firsButton = (value + value) + (index + 1);
                 var secondButton = (value + value) + (index + 2);
@@ -22,17 +21,23 @@ const ButtonTable = () =>{
                         <>
                         { <div className="button-wrapper">
                             <button 
-                                className={`btn roulette-button ${firsButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${firsButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {firsButton}
                             </button>
                             <button 
-                                className={`btn roulette-button ${secondButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${secondButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {secondButton}
                             </button>
                             <button 
-                                className={`btn roulette-button ${thirdButton % 2 === 0 ? 'black-button' : 'white-button'}`}
+                                className={`btn roulette-button 
+                                    ${thirdButton % 2 === 0 ? 'black-button' : 'white-button'}
+                                `}
                             >
                                     {thirdButton}
                             </button>
@@ -40,16 +45,6 @@ const ButtonTable = () =>{
                         </>
                     ) 
             })}
-            {/* <div className="button-wrapper">
-                <button>1</button>
-                <button>2</button>  
-                <button>3</button>  
-            </div>
-            <div className="button-wrapper">
-                <button>4</button>  
-                <button>5</button>  
-                <button>6</button>    
-            </div> */}
         </div>
         </>
     )
