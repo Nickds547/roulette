@@ -30,6 +30,28 @@
     max-height: 200px;
 }
 
+.zero-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 28px 0;
+}
+
+#base {
+    background: grey;
+    position: relative;
+  }
+  #base:before {
+    border-bottom: 43px solid grey;
+    border-left: 59px solid transparent;
+    border-right: 59px solid transparent;
+    content: "";
+    left: -79px;
+    position: absolute;
+    top: 36px;
+    transform: rotate(-90deg);
+  }
+
 @media screen and (max-width: 1200px) {
     .button-container{
         max-width: 100%;
@@ -39,5 +61,10 @@
         flex-direction: row;
         max-width: 210px;
         flex-wrap: wrap;
+    }
+
+    .zero-buttons{
+        display: flex;
+        flex-direction: row;
     }
 }
