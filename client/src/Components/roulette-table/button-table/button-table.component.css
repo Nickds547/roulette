@@ -28,6 +28,7 @@
 .button-container{
     display: flex;
     max-height: 200px;
+    background-image: url("./../../../assets/table.png");
 }
 
 .zero-buttons{
