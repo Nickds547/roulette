@@ -69,7 +69,8 @@ const LoginComponent = (props: loginProps) => {
                             </span>
                         }
                     </Form.Group>
-                    <Button 
+                    <Button
+                        id="login-submit" 
                         variant="primary" 
                         onClick={submitForm}
                     >

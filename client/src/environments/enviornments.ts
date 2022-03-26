@@ -1,5 +1,5 @@
 
 
 export const environment = {
-    rouletteURL: ""
+    rouletteApi: "http://localhost:8080"
 }
