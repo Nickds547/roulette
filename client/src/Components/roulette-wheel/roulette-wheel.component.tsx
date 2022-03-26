@@ -1,11 +1,10 @@
-import rouletteWheel from '../../assets/roulette-wheel-infinite.gif';
+import './roulette-wheel.css'
 
 
 const RouletteWheel = () =>{
     return (
         <>
-            <div>
-                <img style={{width: '300px'}} src={rouletteWheel} alt="roulette-wheel"/>
+            <div className="roulette-wheel">
             </div>
         </>
     );

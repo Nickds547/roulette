@@ -1,0 +1,12 @@
+.roulette-wheel{
+    display: flex;
+    align-self: self-start;
+    width: 440px;
+    background-image: url('../../assets/empty-background-roulette-wheel.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 249px;
+    position: absolute;
+    top: 200px;
+    left: -72px;
+}
