@@ -2,11 +2,22 @@ import { IUser } from "../types/user";
 import * as userDB from '../data/user.data'
 import * as authService from './auth.service';
 
-export const login = async (username, password: string): Promise<boolean> =>{
+interface IClientUser {
+    username: string,
+    role: string
+}
+
+export const login = async (username, password: string): Promise<IClientUser | null> =>{
     const user = await userDB.getUser(username);
     if(user === null)
-        return false;
+        return null;
+
+    var clientUser: IClientUser = {username: user.username, role: user.role};
     
-    return await authService.comparePasswords(password, user.password)
+    var validPassword =  await authService.comparePasswords(password, user.password)
     .catch(err => console.log(err)) || false;
+
+    if(validPassword)
+        return clientUser;
+    else return null;
 }
