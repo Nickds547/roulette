@@ -23,10 +23,10 @@
 .main-button-container{
     display: flex;
     background-image: url('../../../assets/table\ center.png');
-    background-size: 850px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;
+    height: 360px;
     padding-left: 10px;
 }
 

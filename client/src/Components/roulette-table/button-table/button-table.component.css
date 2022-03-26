@@ -13,6 +13,7 @@
 .button-container{
     display: flex;
     margin-top: 100px;
+    flex-wrap: wrap;
 }
 
 .zero-buttons{
@@ -25,8 +26,13 @@
     background-image: url('../../../assets/table-left.png');
     background-size: 123px;
     background-repeat: no-repeat;
-    margin-top: 42px;
+    margin-top: 6px;
     width: 106px;
+}
+
+.table-bottom-wrapper{
+    display: flex;
+    flex: 1;
 }
 
 @media screen and (max-width: 1200px) {
