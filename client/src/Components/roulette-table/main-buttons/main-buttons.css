@@ -1,0 +1,42 @@
+.white-button{
+    background-color:white !important;
+    border: black !important;
+    border-width: thin;
+    border-style: solid;
+}
+.black-button{
+    background-color: black !important;
+    color: white !important;
+}
+
+.btn{
+    height: 90px;
+    margin-left: 10px;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.main-button-container{
+    display: flex;
+    background-image: url('../../../assets/table\ center.png');
+    background-size: 850px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .button-wrapper{
+        flex-direction: row;
+        max-width: 210px;
+        flex-wrap: wrap;
+    }
+    .main-button-container{
+        display: initial;
+    }
+}

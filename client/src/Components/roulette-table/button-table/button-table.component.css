@@ -3,65 +3,36 @@
     display: block;
 }
 
-.button-wrapper{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-}
 .roulette-button{
     width: 50px;
     text-align: center;
     margin: 10px;
 }
 
-.white-button{
-    background-color:white !important;
-    border: black !important;
-    border-width: thin;
-    border-style: solid;
-}
-.black-button{
-    background-color: black !important;
-    color: white !important;
-}
 
 .button-container{
     display: flex;
-    max-height: 200px;
-    background-image: url("./../../../assets/table.png");
+    margin-top: 100px;
 }
 
 .zero-buttons{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 28px 0;
 }
 
-#base {
-    background: grey;
-    position: relative;
-  }
-  #base:before {
-    border-bottom: 43px solid grey;
-    border-left: 59px solid transparent;
-    border-right: 59px solid transparent;
-    content: "";
-    left: -79px;
-    position: absolute;
-    top: 36px;
-    transform: rotate(-90deg);
-  }
+.table-left{
+    background-image: url('../../../assets/table-left.png');
+    background-size: 123px;
+    background-repeat: no-repeat;
+    margin-top: 42px;
+    width: 106px;
+}
 
 @media screen and (max-width: 1200px) {
     .button-container{
         max-width: 100%;
         display: block;
-    }
-    .button-wrapper{
-        flex-direction: row;
-        max-width: 210px;
-        flex-wrap: wrap;
     }
 
     .zero-buttons{

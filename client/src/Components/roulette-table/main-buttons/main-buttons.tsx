@@ -1,4 +1,4 @@
-
+import './main-buttons.css'
 
 
 
@@ -13,7 +13,7 @@ const MainButtons = () =>{
 
     
     return (
-        <>
+        <div className="main-button-container">
             {buttons.map((value, index) =>{
                     var firsButton = (value + value) + (index + 1);
                     var secondButton = (value + value) + (index + 2);
@@ -47,7 +47,7 @@ const MainButtons = () =>{
                             </>
                         ) 
                 })}
-        </>
+        </div>
     )
 }
 

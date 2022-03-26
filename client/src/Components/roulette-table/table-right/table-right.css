@@ -1,0 +1,26 @@
+.table-right-container{
+    display: flex;
+    flex-direction: column;
+    width: 85px;
+    margin-top: 71px;
+    align-items: center;
+    padding-top: 20px;
+    row-gap: 20px;
+}
+.table-right-image{
+    background-image: url("../../../assets/table\ right.png");
+    background-size: 121px;
+    background-repeat: no-repeat;
+}
+
+.table-right-item{
+    height: 90px;
+    display: flex;
+}
+
+.table-right-text{
+    white-space: pre-wrap;
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
