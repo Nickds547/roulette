@@ -1,4 +1,4 @@
-.white-button{
+/* .white-button{
     background-color:white !important;
     border: black !important;
     border-width: thin;
@@ -7,7 +7,7 @@
 .black-button{
     background-color: black !important;
     color: white !important;
-}
+} */
 
 .btn{
     height: 90px;
@@ -22,21 +22,20 @@
 
 .main-button-container{
     display: flex;
-    background-image: url('../../../assets/table\ center.png');
+    background-image: url('../../../assets/table-center-numbered.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 360px;
     padding-left: 10px;
+    z-index: 2;
 }
 
 @media screen and (max-width: 1200px) {
-    .button-wrapper{
-        flex-direction: row;
-        max-width: 210px;
-        flex-wrap: wrap;
-    }
     .main-button-container{
-        display: initial;
+        transform: rotate(90deg);
+        position: relative;
+        top: 290px;
+        right: 194px;
     }
 }

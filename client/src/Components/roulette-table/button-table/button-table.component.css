@@ -25,7 +25,7 @@
 
 .table-left{
     background-image: url('../../../assets/table-left.png');
-    background-size: 123px;
+    background-size: 120px;
     background-repeat: no-repeat;
     margin-top: 6px;
     width: 106px;
@@ -36,14 +36,21 @@
     flex: 1;
 }
 
-@media screen and (max-width: 1200px) {
-    .button-container{
-        max-width: 100%;
-        display: block;
-    }
+@media screen and (max-width: 1300px) {
+   /* .table-left{
+       display: none;
+   } */
 
-    .zero-buttons{
-        display: flex;
-        flex-direction: row;
-    }
+   .table-left{
+        transform: rotate(90deg);
+        height: 362px;
+        position: relative;
+        top: 176px;
+        left: 171px;
+   }
+
+   .button-container{
+        top: -201px;
+        position: relative;
+   }
 }

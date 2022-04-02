@@ -27,21 +27,21 @@ const MainButtons = () =>{
                                         ${firsButton % 2 === 0 ? 'black-button' : 'white-button'}
                                     `}
                                 >
-                                        {firsButton}
+                                        {/* {firsButton} */}
                                 </button>
                                 <button 
                                     className={`btn roulette-button 
                                         ${secondButton % 2 === 0 ? 'black-button' : 'white-button'}
                                     `}
                                 >
-                                        {secondButton}
+                                        {/* {secondButton} */}
                                 </button>
                                 <button 
                                     className={`btn roulette-button 
                                         ${thirdButton % 2 === 0 ? 'black-button' : 'white-button'}
                                     `}
                                 >
-                                        {thirdButton}
+                                        {/* {thirdButton} */}
                                 </button>
                             </div>}
                             </>

@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+.homepage-container{
+    overflow: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     .roulette-table{
         flex-direction: column;

@@ -6,7 +6,7 @@ const HomePage = () =>{
 
     return (
         <>
-        <div className="hompage-container">
+        <div className="homepage-container">
             <div className="roulette-table">
                 <components.RouletteWheel/>
                 <components.ButtonTable/>
