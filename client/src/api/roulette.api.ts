@@ -14,7 +14,7 @@ const login = (username: string, password: string) =>{
             username,
             password
         })
-    })
+    });
 
 }
 

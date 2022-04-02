@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { ILogin } from "../../redux/user-account/user-account.model";
+import LoaderComponent from "../loader/loader.component";
 import './login.component.css';
 
 interface loginProps {
     loginSubmitted: (account: ILogin) => void;
+    isLoading?: boolean;
 }
 
 
@@ -38,7 +40,8 @@ const LoginComponent = (props: loginProps) => {
 
     return (
         <>
-            <div className="login-container">
+           {!props.isLoading ?  
+           <div className="login-container">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username*</Form.Label>
@@ -78,6 +81,11 @@ const LoginComponent = (props: loginProps) => {
                     </Button>
                 </Form>
             </div>
+            :
+                <>
+                    <LoaderComponent />
+                </>
+            }
         </>
     )
 }

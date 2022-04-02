@@ -20,32 +20,26 @@ export const userAccount = createSlice({
   name: 'userAccount',
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<ILogin>) => {
-      //TODO: add api
-      // var newUser: IUser = {
-      //   role:  'admin',
-      //   token: 'valid',
-      //   username:  action.payload.username
-      // }
-      
-      rouletteApi.login(action.payload.username, action.payload.password)
-      .then((data) =>{
-        console.log(data);
-      })
-      .catch((error) =>{
-
-      })
-
-      // state.account = {...newUser};
-    },
     logout: (state) => {
       state.account = { username: "",
       role: "",
       token: ""};
+    },
+    setUserAccount: (state, action: PayloadAction<IUser>) =>{
+      const {username, token, role} = action.payload;
+
+      console.log('action payload: ', action.payload)
+      var userAccount: IUser = {username, token, role};
+      console.log('userAccount: ', userAccount)
+      state.account = userAccount;
+
+    },
+    setLoading: (state, action: PayloadAction<boolean>) =>{
+      state.loading = action.payload;
     }
   },
 })
 
-export const { login, logout } = userAccount.actions
+export const { logout, setUserAccount,setLoading } = userAccount.actions
 
 export default userAccount.reducer
