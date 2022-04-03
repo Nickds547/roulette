@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ILogin, IUser } from './user-account.model'
-import * as rouletteApi from '../../api/roulette.api';
+import { IUser } from './user-account.model'
 
 interface IUserAccountState {
   account: IUser;
@@ -10,8 +9,8 @@ interface IUserAccountState {
 const initialState: IUserAccountState ={
   account: {
     username: "",
-    role: "",
-    token: ""
+    role: localStorage.getItem('role') || '',
+    token: localStorage.getItem('token') || ''
   },
   loading: false
 }
@@ -28,9 +27,10 @@ export const userAccount = createSlice({
     setUserAccount: (state, action: PayloadAction<IUser>) =>{
       const {username, token, role} = action.payload;
 
-      console.log('action payload: ', action.payload)
+      if(token) localStorage.setItem('token', token);
+      if(role) localStorage.setItem('role', role);
+
       var userAccount: IUser = {username, token, role};
-      console.log('userAccount: ', userAccount)
       state.account = userAccount;
 
     },

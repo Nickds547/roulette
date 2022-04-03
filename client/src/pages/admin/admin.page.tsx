@@ -1,16 +1,15 @@
 import { LoginComponent } from "../../components";
-import RouletteInputsComponent from "../../components/roulette-inputs/roulette-inputs.component";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { ILogin, IUser } from "../../redux/user-account/user-account.model";
+import { ILogin } from "../../redux/user-account/user-account.model";
 import { setLoading, setUserAccount } from "../../redux/user-account/user-account.store";
 import * as rouletteApi from '../../api/roulette.api';
+import TheoriesContainer from "../../components/theories-container/theories-container.component";
 
 
 
 const AdminPage = () =>{
     const userAccount = useAppSelector((state) => state.userAccountReducer.account)
     const isLoading = useAppSelector((state) => state.userAccountReducer.loading)
-    const theories = useAppSelector((state) => state.theoriesReducer.theories)
     const dispatch = useAppDispatch();
 
     function sendLogin(accountData: ILogin): void {
@@ -21,7 +20,6 @@ const AdminPage = () =>{
             return data.json()
         })
         .then((data) =>{
-            console.log("data: ", data)
             dispatch(setUserAccount(data))
             dispatch(setLoading(false));
         })
@@ -35,7 +33,7 @@ const AdminPage = () =>{
         <>
             {userAccount.token ? 
                 <>
-                   {userAccount.role === 'admin' && <RouletteInputsComponent  theories={theories}/>}
+                   {userAccount.role === 'admin' && <TheoriesContainer />}
                 </> 
             : 
                 <>

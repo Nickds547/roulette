@@ -1,4 +1,5 @@
 export interface ITheory{
     theory: string,
-    sortOrder: number
+    sortOrder: number,
+    _id?: string
 }
