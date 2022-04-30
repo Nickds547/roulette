@@ -21,10 +21,17 @@ export const theoriesReducer = createSlice({
     },
     updateLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
-    }
+    },
+    addTheory: (state, action: PayloadAction<ITheory>) => {
+      var tempState = JSON.parse(JSON.stringify(state.theories));
+      tempState.unshift(action.payload);
+      console.log('tempState: ', tempState);
+      state.theories = tempState;
+      console.log('new state: ', state.theories)
+    } 
   }
 })
 
-export const { updateLoading, updateTheories} = theoriesReducer.actions
+export const { updateLoading, updateTheories, addTheory} = theoriesReducer.actions
 
 export default theoriesReducer.reducer

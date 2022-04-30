@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { Form } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { getTheories } from '../../api/roulette.api';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { updateTheories } from '../../redux/thoeries/theories.store';
-import { setLoading } from '../../redux/user-account/user-account.store';
+import { addTheory, updateLoading, updateTheories } from '../../redux/thoeries/theories.store';
+import { ITheory } from '../../redux/thoeries/theories.model'
 import LoaderComponent from '../loader/loader.component';
 import TheoriesInput from '../theories-input/theories-input.component'
 import './theories-container.component.css'
@@ -13,25 +13,35 @@ const TheoriesContainer = () =>{
     
     const theories = useAppSelector((state) => state.theoriesReducer.theories);
     const isLoading = useAppSelector((state) => state.theoriesReducer.loading)
+    const [hasUpdated, setUpdated] = useState(false);
     const dispatch = useAppDispatch();
 
     useEffect(() =>{
-       if(theories.length === 0){
-           dispatch(setLoading(true))
+       if(!hasUpdated){
+           setUpdated(true);
+           dispatch(updateLoading(true))
              getTheories()
             .then((data) => {return data.json()})
             .then((data) =>{
                 dispatch(updateTheories(data))
-                dispatch(setLoading(false))
+                dispatch(updateLoading(false))
             }).catch((error) =>{
-                dispatch(setLoading(false))
+                dispatch(updateLoading(false))
             })
        }
+       console.log('updated Theories: ', theories)
     })
 
+    const addNewTheory = (): void =>{
+        const newTheory: ITheory = {
+            theory: '',
+            sortOrder: theories.length + 1
+        }
+        dispatch(addTheory(newTheory))
+    }
+
     return (
-        <>
-        In Component
+        <div className='theories-container'>
            {!isLoading ? 
                 theories.length > 0 ?
                     <Form>
@@ -48,7 +58,10 @@ const TheoriesContainer = () =>{
             :
                 <><LoaderComponent /></>
             }
-        </>
+            <div className='theory-button-container'> 
+                <Button onClick={() => addNewTheory()} className='add-theory-button'>Add theory</Button>
+            </div>
+        </div>
     )
 }
 

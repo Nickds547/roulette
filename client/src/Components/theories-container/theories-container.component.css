@@ -18,3 +18,19 @@
     display: initial !important;
     width: 50% !important;
 }
+
+.add-theory-button{
+    height: 100%;
+    margin-top: 12px;
+}
+
+.theories-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.theory-button-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+}
