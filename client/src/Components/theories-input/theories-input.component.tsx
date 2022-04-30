@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { ITheory } from "../../redux/thoeries/theories.model";
 import './theories-input.component.css'
 
@@ -30,6 +30,7 @@ export const TheoriesInput = (props: ITheoryInputProp) =>{
                 <Form.Label>Text</Form.Label>
                 <Form.Control defaultValue={''} value={theory}></Form.Control>
             </Form.Group>
+            <Button className="theory-delete-button"  variant="danger">Delete</Button>
         </div>
     )
 }

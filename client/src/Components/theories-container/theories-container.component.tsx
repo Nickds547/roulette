@@ -12,7 +12,7 @@ import './theories-container.component.css'
 const TheoriesContainer = () =>{
     
     const theories = useAppSelector((state) => state.theoriesReducer.theories);
-    const isLoading = useAppSelector((state) => state.theoriesReducer.loading)
+    const isLoading = useAppSelector((state) => state.theoriesReducer.loading);
     const [hasUpdated, setUpdated] = useState(false);
     const dispatch = useAppDispatch();
 
@@ -29,7 +29,6 @@ const TheoriesContainer = () =>{
                 dispatch(updateLoading(false))
             })
        }
-       console.log('updated Theories: ', theories)
     })
 
     const addNewTheory = (): void =>{
@@ -40,6 +39,8 @@ const TheoriesContainer = () =>{
         dispatch(addTheory(newTheory))
     }
 
+   
+
     return (
         <div className='theories-container'>
            {!isLoading ? 
@@ -48,7 +49,7 @@ const TheoriesContainer = () =>{
                         {theories.map((theory, index) =>{
                             return(
                                 <div key={index}>
-                                    <TheoriesInput theory={theory}/>
+                                    <TheoriesInput  theory={theory}/>
                                 </div>
                             )
                         })}

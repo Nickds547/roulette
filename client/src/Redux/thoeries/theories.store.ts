@@ -25,10 +25,8 @@ export const theoriesReducer = createSlice({
     addTheory: (state, action: PayloadAction<ITheory>) => {
       var tempState = JSON.parse(JSON.stringify(state.theories));
       tempState.unshift(action.payload);
-      console.log('tempState: ', tempState);
       state.theories = tempState;
-      console.log('new state: ', state.theories)
-    } 
+    }
   }
 })
 

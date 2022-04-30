@@ -20,4 +20,6 @@
 
 .page-container{
   padding: 10px;
+  background-image: url('./assets/velvet.jpg');
+  height: 100vh;
 }
