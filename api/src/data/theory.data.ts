@@ -3,7 +3,7 @@ import { ITheory } from "../types/theory";
 
 
 export const getAllTheories = async (): Promise<ITheory[]> =>{
-    return await theory.find();
+    return await theory.find().sort({sortOrder: -1});
 }
 
 export const createTheories = async (theories: ITheory[]): Promise<ITheory[]> =>{
